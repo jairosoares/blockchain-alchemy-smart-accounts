@@ -13,13 +13,14 @@ npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
 
-# Vidio Part II
+## Vidio Part I
 https://www.youtube.com/watch?v=NM04uxcCOEw
 
-# eth-infinitismo account-abstraction
+## eth-infinitismo account-abstraction
 https://github.com/eth-infinitism/account-abstraction
 
-# https://www.npmjs.com/package/@account-abstraction/contracts
+## npm update @account-abstraction/contracts
+ https://www.npmjs.com/package/@account-abstraction/contracts
 npm i @account-abstraction/contracts@0.6.0
 
 ## Error (SCRIPT-EP):
@@ -80,11 +81,12 @@ ProviderError: Error: VM Exception while processing transaction: reverted with c
 ```
 
 
-# SCRIPT-EP >>> Deploy do EntryPoint
+
+## SCRIPT-EP >>> Deploy do EntryPoint
 npx hardhat run scripts/entrypoint-deploy.ts --network localhost
-# SCRIPT-AF >>> Deploy do AccountFactory
+## SCRIPT-AF >>> Deploy do AccountFactory
 npx hardhat run scripts/account-factory-deploy.ts --network localhost
-# SCRIPT-EX >>> Execute user operation
+## SCRIPT-EX >>> Execute user operation
 npx hardhat run scripts/execute.js --network localhost
-# SCRIPT-T  >>> Run test
+## SCRIPT-T  >>> Run test
 npx hardhat run scripts/test.ts --network localhost
