@@ -13,7 +13,7 @@ npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
 
-## Vidio Part I
+## Video Part I
 https://www.youtube.com/watch?v=NM04uxcCOEw
 
 ## eth-infinitismo account-abstraction
