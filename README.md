@@ -40,7 +40,7 @@ ProviderError: Error: Transaction reverted: trying to deploy a contract whose co
     at async ContractFactory.deploy (/home/jairo/Development/blockchain/erc-4337/alchemy/smart-accounts/node_modules/ethers/src.ts/contract/factory.ts:111:24)
     at async main (/home/jairo/Development/blockchain/erc-4337/alchemy/smart-accounts/scripts/entrypoint-deploy.ts:4:20)
 ```
-## Solution: Foi preciso comentar a versão do solidity e fazer a modificação abaixo. 
+## Solution: It was necessary to comment on the solidity version and make the modification below.
 ### The expanded usage allows for more control of the compiler:
 - https://hardhat.org/hardhat-runner/docs/guides/compile-contracts
 
@@ -65,22 +65,19 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-### Error (SCRIPT-EX): Não é um valor hexadecimal valido, 0x não é um valor valido hexadecimal:
+### Error (SCRIPT-EX): Not a valid hexadecimal value, 0x is not a valid hexadecimal value:
 ```shell
 TypeError: invalid BytesLike value (argument="value", value="0xe7f1725E7734CE288F8367e1Bb143E90bb3F05120x9859387b000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb92266", code=INVALID_ARGUMENT, version=6.11.1)
 ```
-### Solução: acrescentar o .slice(2) no final
+### Solution: add .slice(2) at the end
 ```typescript
 const initCode = FACTORY_ADDRESS + AccountFactory.interface.encodeFunctionData("createAccount", [address0]).slice(2);
 ```
 
-### Error: Sempre que vem AA como mensagem de error quer dirzer que eh uma mensagem do EntryPoint contract:
+### Error: AA appears as an error message, it means that it is a message from the EntryPoint contract:
 ```shell
 ProviderError: Error: VM Exception while processing transaction: reverted with custom error 'FailedOp(0, "AA13 initCode failed or OOG")'
-### Error: Não é um valor hexadecimal valido, 0x não é um valor valido hexadecimal:
 ```
-
-
 
 ## SCRIPT-EP >>> Deploy do EntryPoint
 npx hardhat run scripts/entrypoint-deploy.ts --network localhost
