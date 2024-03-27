@@ -11,7 +11,7 @@ async function main() {
   console.log("* address0:", address0);
 
   const entryPoint = await ethers.getContractAt("EntryPoint", ENTRY_POINT_ADDRESS);
-  // ok
+  
   const sender = ethers.getCreateAddress({
     from: FACTORY_ADDRESS,
     nonce: FACTORY_NONCE

@@ -13,7 +13,7 @@ contract Account is IAccount {
         owner = _owner;
     }
 
-    // foi removido os nomes dos parâmetros!???
+    // Parameter names were removed!?
     function validateUserOp(
         UserOperation calldata,
         bytes32,
