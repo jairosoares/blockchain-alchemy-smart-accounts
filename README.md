@@ -71,6 +71,6 @@ npx hardhat run scripts/entrypoint-deploy.ts --network localhost
 ## SCRIPT-AF >>> Deploy do AccountFactory
 npx hardhat run scripts/account-factory-deploy.ts --network localhost
 ## SCRIPT-EX >>> Execute user operation
-npx hardhat run scripts/execute.js --network localhost
+npx hardhat run scripts/execute.ts --network localhost
 ## SCRIPT-T  >>> Run test
 npx hardhat run scripts/test.ts --network localhost
