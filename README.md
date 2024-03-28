@@ -1,7 +1,7 @@
 # Sample Smart Accounts
 
-## Video Part I
-https://www.youtube.com/watch?v=NM04uxcCOEw
+## Video Part II
+https://www.youtube.com/watch?v=2LGpEobxIBA
 
 ## eth-infinitismo account-abstraction
 https://github.com/eth-infinitism/account-abstraction
