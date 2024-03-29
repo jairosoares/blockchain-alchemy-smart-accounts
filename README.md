@@ -66,11 +66,11 @@ const initCode = FACTORY_ADDRESS + AccountFactory.interface.encodeFunctionData("
 ProviderError: Error: VM Exception while processing transaction: reverted with custom error 'FailedOp(0, "AA13 initCode failed or OOG")'
 ```
 
-## SCRIPT-EP >>> Deploy do EntryPoint
-npx hardhat run scripts/entrypoint-deploy.ts --network localhost
-## SCRIPT-AF >>> Deploy do AccountFactory
-npx hardhat run scripts/account-factory-deploy.ts --network localhost
+## SCRIPT-EP >>> Deploy do AccountFactory, EntryPoint, Paymaster
+npx hardhat run scripts/deploy.ts --network localhost
+
 ## SCRIPT-EX >>> Execute user operation
 npx hardhat run scripts/execute.ts --network localhost
+
 ## SCRIPT-T  >>> Run test
 npx hardhat run scripts/test.ts --network localhost
