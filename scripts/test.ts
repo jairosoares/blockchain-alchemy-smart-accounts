@@ -30,7 +30,8 @@ async function main() {
     const balance = await entryPoint.balanceOf(PAY_MASTER_ADDRESS);
     console.log("Paymaster balance on EntryPoint", ethers.formatEther(balance));
 
-    }
+}
+
 
 main().catch((error) => {
     console.error(error);

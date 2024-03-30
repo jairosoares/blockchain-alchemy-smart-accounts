@@ -1,6 +1,6 @@
 # Sample Smart Accounts
 
-## Video Part II
+## Video Part III
 https://www.youtube.com/watch?v=2LGpEobxIBA
 
 ## eth-infinitismo account-abstraction
@@ -61,6 +61,19 @@ TypeError: invalid BytesLike value (argument="value", value="0xe7f1725E7734CE288
 const initCode = FACTORY_ADDRESS + AccountFactory.interface.encodeFunctionData("createAccount", [address0]).slice(2);
 ```
 
+### Error (SCRIPT-EX): 
+```shell
+ProviderError: Error: VM Exception while processing transaction: reverted with custom error 'FailedOp(0, "AA13 initCode failed or OOG")'
+```
+### Solution: add more gas
+```typescript
+  const userOperation = {
+    callGasLimit: 800_000,
+    verificationGasLimit: 800_000,
+    preVerificationGas: 200_000,
+  }
+```
+
 ### Error: AA appears as an error message, it means that it is a message from the EntryPoint contract:
 ```shell
 ProviderError: Error: VM Exception while processing transaction: reverted with custom error 'FailedOp(0, "AA13 initCode failed or OOG")'
@@ -74,3 +87,5 @@ npx hardhat run scripts/execute.ts --network localhost
 
 ## SCRIPT-T  >>> Run test
 npx hardhat run scripts/test.ts --network localhost
+
+npx hardhat run scripts/sign.ts --network hardhat

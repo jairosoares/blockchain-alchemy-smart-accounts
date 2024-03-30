@@ -42,21 +42,24 @@ async function main() {
     value: ethers. parseEther("100")
   });
 
-  const userOperation = {
+    const userOperation = {
     sender,
     nonce: await entryPoint.getNonce(sender,0),
     initCode,
     callData: Account.interface.encodeFunctionData("execute"),
-    callGasLimit: 200_000,
-    verificationGasLimit: 200_000,
-    preVerificationGas: 50_000,
+    callGasLimit: 800_000,
+    verificationGasLimit: 800_000,
+    preVerificationGas: 200_000,
     maxFeePerGas: ethers.parseUnits("10", 'gwei'),
     maxPriorityFeePerGas: ethers.parseUnits("5", 'gwei'),
     paymasterAndData: PAY_MASTER_ADDRESS,
-    signature: "0x"
+    signature: "0x",
   }
+  // Signature security
+  const userOpHash = await entryPoint.getUserOpHash(userOperation);
+  userOperation.signature= await signer0.signMessage(ethers.getBytes(userOpHash));
+  //console.log("* userOperation:", userOperation);
 
-  console.log("* userOperation:", userOperation);
   const tx = await entryPoint.handleOps([userOperation], address0);
   console.log("* tx:", tx);
 
